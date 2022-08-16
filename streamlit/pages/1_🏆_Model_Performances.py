@@ -23,9 +23,9 @@ st.markdown('- Test R2 Score: 0.971')
 st.markdown('- Mean Absolute Error: 2.761')
 st.markdown('- Mean Squared Error: 14.165')
 
-image = Image.open('../images/a_model.jpeg')
+image2 = Image.open('../images/a_model.jpeg')
 
-st.image(image, caption='Average Model Performance')
+st.image(image2, caption='Average Model Performance')
 
 st.markdown('## High Model ')
 st.text('The winning model for the high training data was also XGBoost with added PolynomialFeatures.')
@@ -39,6 +39,6 @@ st.markdown('- Test R2 Score: 0.922')
 st.markdown('- Mean Absolute Error: 3.272')
 st.markdown('- Mean Squared Error: 20.242')
 
-image = Image.open('../images/h_model.jpeg')
+image3 = Image.open('../images/h_model.jpeg')
 
-st.image(image, caption='High Model Performance')
+st.image(image3, caption='High Model Performance')

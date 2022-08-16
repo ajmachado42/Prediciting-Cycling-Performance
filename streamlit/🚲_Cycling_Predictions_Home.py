@@ -14,8 +14,8 @@ st.markdown('### Please use the sidebar to explore the model and Tableau Dashboa
 
 st.markdown('For full project repo and README visit Adriana\'s [GitHub Repo](https://github.com/ajmachado42/Predicting-Cycling-Metrics#Predictions).')
 
-image = Image.open('Johnson-london.jpg')
-st.image(image, caption='Wikipedia')
+image1 = Image.open('Johnson-london.jpg')
+st.image(image1, caption='Wikipedia')
 
 st.markdown('Humans have been bicycling for hundreds of years. The earliest verified bicycle was the German draisine, or velocipede, dating back to 1817 and invented by Baron Karl von Drais. The name "bicycle" was coined in 1860s France. Earlier unverified and debatable accounts go as far as 1500 AD to a sketch by Gian Giacomo Caprotti, a pupil of Leonardo da Vinci ([source](https://en.wikipedia.org/wiki/History_of_the_bicycle)).')
 
