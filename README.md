@@ -159,12 +159,81 @@ The winning model for the high training data was also XGBoost but with Polynomia
 
 ## Tableau Dashboards
 
-- Predictions on the Marin Century Classic (August 06, 2022) can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-HeartRateIntensity/IntensityDash)
+- Heart rate and intensity zone predictions on the Marin Century Classic (August 06, 2022) can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-HeartRateIntensity/IntensityDash)
 
 - Average model dashboard for weather variables and elevation changes can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-AverageModel-WeatherElevation/WeatherElevation-AverageModel)
 
 - High model dashboard for weather variables and elevation changes can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-HighModel-WeatherElevation/WeatherElevationDash-HighModel)
 
+All dashboards are interactive and data can be selected to look more closely, individually or by grouping.
+
 ## Streamlit
 
-- LINK COMING SOON
+- LINK FOR DEPLOYED APP PENDING
+
+# Conclusion and Recommendations
+
+Predicting how a route is going to go can have a lot more variables than just the ones I used relating to heart rate, distance, elevation, and weather. Other factors like nutrition levels, weight of your gear, materials of your clothing, body mass, the forces of riding in a peloton, etc. are also variables that could be considered. 
+
+Although my models performed really well, and there are always going to be uncertainties, I'd still be curious to see how much more data can go into this model. The target could also be updated to power output by taking trackpoint data from bicycle setups that have a power meter. 
+
+The predictions were reassuring that I'd still be able to do this ride without hitting major intensity zones 4 and 5, often. Taking into account break times and snacks ingested during the ride would also be variables to explore and I don't doubt would increase the level of endurance and performance during a ride. 
+
+## Recommendations
+I'd recommend exploring this even further with power output variables and nutritional variables. For cis-gender females, hormone cycles can also have a big impact on performance and perceived exertion. Wind force is something that could also be explored further and how that force affects headwinds as well as tailwinds during a ride.
+
+In regards to the app, I would love to develop it even more to be customized per user. Ideally a user's historical trackpoint data could be integrated, from Strava or whatever devices they might use. Performance level and other inputs could be used to determine which model would be best suited. Are they a cis-gender male or female? Do they have a power meter, cadence sensor, and/or heart rate monitor? Are they trying to predict on current state or past states or does putting it all together make a difference for the model? 
+
+So much more to explore in the world of cycling. 
+
+# Data Descriptions
+
+## Directories and Files
+
+| Directory | Filename/Folder | Type | Description |
+| ------------- | --------------- | ---- | ----------- |
+| main | README | markdown | Description of project, modeling, and conclusions |
+| main | .gitignore | .gitignore | folders and file types to ignore for github |
+| code | 00_1_garmin_gpx | .ipynb | function build out for extracting trackpoints from .gpx files |
+| code | 00_2_openweather_api | .ipynb | function and API buildout for extracting trackpoing weather data|
+| code | 00_3_strava_api | .ipynb | exploratory notebook for using the Strava API for activitiy data|
+| code | 01_1_train_data | .ipynb | notebook to extract and feature engineer training datasets |
+| code | 01_2_train_eda | .ipynb | notebook with EDA on training data |
+| code | 01_3_modeling | .ipynb | notebook for creating, testing, and evaluating average and high models|
+| code | 02_1_test_data | .ipynb | notebook to extract and feature engineer test dataset |
+| code | 02_2_test_preds_eda | .ipynb | notebook to run model predictions on test dataset as well as some results EDA drafting for Tableau |
+| data | average | various | directory for average train dataset |
+| data | high | various | directory for high train dataset |
+| data | sandbox | various | directory for data used in function testing |
+| data | various | various | files used for creating the test dataset and generated prediction files|
+| images | various | .jpeg & .png | images used for final presentation and README |
+| models | a_model_xgb | .pkl | saved average XGBoost model |
+| models | h_model_xgb | .pkl | saved high XGBoost model |
+| streamlit | various | .py, .jpeg, .txt | files for the Streamlit app
+
+## Model Variables
+
+| Variable | Description |
+| -------- | ----------- |
+| heart_rate | target variable, beats/ minute |
+| timestamp | trackpoint datetime |
+| latitude | |
+| longitude ||
+| elevation | meters|
+| dt | UNIX timestamp |
+| bearing | feature engineered - degrees |
+| time_diff_s | feature engineered - time difference between trackpoints - seconds |
+| total_time_s | feature engineered - cumulative sum of seconds |
+| ele_diff_m | feature engineered - elevation change between trackpoints - meters |
+| total_ele_change_m | feature engineered - elevation trackpoint differences cumulative sum - meters |
+| lat_lon | feature engineered - tuple of latitude and longitude |
+| dist_diff_km | feature engineered - distance difference between trackpoints - kilometers |
+| total_dist_km | feature engineered - cumulative sum of distance differences - kilometers |
+| temp | Kelvins
+| feels_like | perceived temp in Kelvins |
+| pressure | hPa |
+| humidity | % |
+|dew_point | temperature that dew forms - Kelvins |
+| clouds | whether clouds were around - boolean |
+| wind_speed | meters/second |
+| wind_deg | meteorological angle of wind |
