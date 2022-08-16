@@ -7,11 +7,11 @@
 #### [Data Gathering, Extracting, and Combining ](#Data-Gathering,-Extracting,-&-Combining)
 #### [Exploratory Data Analysis](#Train-Dataset-Exploratory-Data-Analysis)
 #### [Modeling ](#Modeling)
-#### [Predictions ](#Predictions)
+#### [Predictions & Dashboards (Tableau & Streamlit)](#Predictions,-Tableau,-&-Streamlit)
 #### [Conclusions & Recommendations ](#Conclusion-and-Recommendations)
 #### [Data Descriptions ](#Data-Descriptions)
 
-![image info](https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Johnson-london.jpg/1920px-Johnson-london.jpg)
+![image info](https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Johnson-london.jpg/660px-Johnson-london.jpg)
 
 # Background & Problem Statement
 ---
@@ -19,7 +19,7 @@
 
 Humans have been bicycling for hundreds of years. The earliest verified bicycle was the German draisine, or velocipede, dating back to 1817 and invented by Baron Karl von Drais. The name "bicycle" was coined in 1860s France. Earlier unverified and debatable accounts go as far as 1500 AD to a sketch by Gian Giacomo Caprotti, a pupil of Leonardo da Vinci ([source](https://en.wikipedia.org/wiki/History_of_the_bicycle)).
 
-The estimated size of the US bicycle market from 2004-2005 was $6.2bn USD. There were an estimated 52.73m cyclists aged 6+ in 2020. And the growing e-bike market is projected to be $53.53bn by 2027 ([source](https://www.statista.com/topics/1686/cycling/#topicHeader__wrapper)).
+The estimated size of the US bicycle market from 2004-2005 was $6.2bn USD. There were an estimated 52.73m cyclists aged 6+ in 2020. And the growing e-bike market is projected to be $53.53bn USD by 2027 ([source](https://www.statista.com/topics/1686/cycling/#topicHeader__wrapper)).
 
 Whether you are cycling for enjoyment, sport, or as a commuter, predicting the uncertainty of a route can be useful. How much exertion is it going to take riding to work? Is the headwind going to suck? Am I in shape enough to take that route on my bicycle or should I invest in an e-bike? 
 
@@ -90,9 +90,10 @@ Of course, distance also had a pretty big difference. Making sense since my perc
 Heart rate and calculated speed were actually very similar between the two periods. 
 
 ![image info](./images/heart_rate.jpeg)
-![image info](./images/speed.jpeg)
 
-Speed made sense since I can only go so fast with the type of bike I have and speed is dependent on a lot of other variables. 
+Speed made sense since I can only go so fast with the type of bike I have and speed is dependent on a lot of other variables.
+
+![image info](./images/speed.jpeg) 
 
 When comparing distance with heart rate during the two periods. I could see how shorter distances had more variability in heart rate during the average period. Heart rate hit higher levels at shorter distances. During the high period, there was more of a constant heart rate maintained at a higher intensity. This indicated higher performance to me since I was able to maintain higher intensities for longer distances. 
 
@@ -109,7 +110,7 @@ While cycling, headwind can feel like a really powerful force, depending on the 
 ---
 [Back to ToC](#Table-of-Contents)
 
-A variety of models were tested for both average and high training sets. 
+A variety of regressor models were tested for both average and high training sets. 
 - Linear Regression
 - Regressor Boosting
     - AdaBoost with Linear Regression Base Estimator
@@ -120,13 +121,13 @@ A variety of models were tested for both average and high training sets.
 - Neural Net Regressor
 
 ## Average Model
-The winning model for the average training data was XGBoost. Neural Net came close but XGBoost FTW. 
-- GridSearch Metrics
+The winning model for the average training data was XGBoost. Neural Net came close but XGBoost, FTW. 
+- GridSearch Parameters
     - Best Score: 0.9659966627636546
     - learning_rate: 0.8
     - max_depth: 4
     - n_estimators: 150
-- Scores & Errors
+- Scores & Error Metrics
     - Train R2 Score: 0.9888381686104007
     - Test R2 Score: 0.9719382323708556
     - Mean Absolute Error: 2.7619688805285496
@@ -136,14 +137,14 @@ The winning model for the average training data was XGBoost. Neural Net came clo
 ![image info](./images/a_model_hist.jpeg)
 
 ## High Model
-The winning model for the high training data was also XGBoost with PolynomialFeatures.
-- GridSearch Metrics
+The winning model for the high training data was also XGBoost but with PolynomialFeatures (as opposed to StandardScaler, alone).
+- GridSearch Parameters
     - Best Score: 0.9066727023063461
     - learning_rate: 0.8
     - max_depth: 5
     - n_estimators: 150
     - reg_lambda: 1
-- Scores & Errors
+- Scores & Error Metrics
     - Train R2 Score: 0.972496927983201
     - Test R2 Score: 0.9227343527337118
     - Mean Absolute Error: 3.2724629223284945
@@ -152,7 +153,18 @@ The winning model for the high training data was also XGBoost with PolynomialFea
 ![image info](./images/h_model.jpeg)
 ![image info](./images/h_model_hist.jpeg)
 
-# Predictions
+# Predictions, Tableau, & Streamlit
 ---
 [Back to ToC](#Table-of-Contents)
 
+## Tableau Dashboards
+
+- Predictions on the Marin Century Classic (August 06, 2022) can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-HeartRateIntensity/IntensityDash)
+
+- Average model dashboard for weather variables and elevation changes can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-AverageModel-WeatherElevation/WeatherElevation-AverageModel)
+
+- High model dashboard for weather variables and elevation changes can be viewed [here](https://public.tableau.com/app/profile/adriana.machado7103/viz/PredictingCyclingMetrics-HighModel-WeatherElevation/WeatherElevationDash-HighModel)
+
+## Streamlit
+
+- LINK COMING SOON
