@@ -2,14 +2,17 @@
 # https://towardsdatascience.com/embedding-tableau-in-streamlit-a9ce290b932b
 
 import streamlit as st
-st.write(st.session_state["shared"])
 
-st.set_page_config(page_title="High Model", page_icon="🌬")
+st.set_page_config(
+    page_title="High Model", 
+    page_icon="😅", 
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
 st.markdown("# High Model")
-st.sidebar.header("High Model")
 
-st.title('Marin Century Classic\nAugust 06, 2022')
+st.header('Marin Century Classic (August 06, 2022)')
 
 ### High Model
 
@@ -52,4 +55,4 @@ def main_high():
     st.components.v1.html(html_temp, width = 1500, height = 1220)
 
 if __name__ == "__main__":    
-    main_avg() 
+    main_high() 

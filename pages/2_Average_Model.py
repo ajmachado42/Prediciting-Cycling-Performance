@@ -2,14 +2,17 @@
 # https://towardsdatascience.com/embedding-tableau-in-streamlit-a9ce290b932b
 
 import streamlit as st
-st.write(st.session_state["shared"])
 
-st.set_page_config(page_title="Average Model", page_icon="🌴")
+st.set_page_config(
+    page_title="Average Model", 
+    page_icon="🌴",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
 st.markdown("# Average Model")
-st.sidebar.header("Average Model")
 
-st.title('Marin Century Classic\nAugust 06, 2022')
+st.header('Marin Century Classic (August 06, 2022)')
 
 ### Average Model
 

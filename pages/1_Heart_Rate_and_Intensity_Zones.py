@@ -10,14 +10,16 @@ Created on Mon Aug  8 16:56:38 2022
 # https://towardsdatascience.com/embedding-tableau-in-streamlit-a9ce290b932b
 
 import streamlit as st
-st.write(st.session_state["shared"])
 
-st.set_page_config(page_title="Heart Rate & Intensity Zones", page_icon="📈")
+st.set_page_config(
+    page_title="Heart Rate & Intensity Zones", 
+    page_icon="📈", 
+    layout="wide",
+    initial_sidebar_state="collapsed")
 
 st.markdown("# Heart Rate & Intensity Zones")
-st.sidebar.header("Heart Rate & Intensity Zones")
 
-st.title('Marin Century Classic\nAugust 06, 2022')
+st.header('Marin Century Classic (August 06, 2022)')
 
 def main_hr():    
     html_temp = """
