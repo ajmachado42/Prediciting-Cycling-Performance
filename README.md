@@ -169,7 +169,7 @@ All dashboards are interactive and data can be selected to look more closely, in
 
 ## Streamlit
 
-- LINK FOR DEPLOYED APP PENDING
+- [Deployed App](https://ajmachado42-predictin-streamlit-cycling-predictions-home-rcpwlw.streamlitapp.com/)
 
 # Conclusion and Recommendations
 
