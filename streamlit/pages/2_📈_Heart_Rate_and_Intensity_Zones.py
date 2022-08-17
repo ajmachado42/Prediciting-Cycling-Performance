@@ -15,7 +15,7 @@ st.set_page_config(
     page_title="Heart Rate & Intensity Zones", 
     page_icon="📈", 
     layout="wide",
-    initial_sidebar_state="collapsed")
+    initial_sidebar_state="expanded")
 
 st.markdown("# Heart Rate & Intensity Zones")
 
