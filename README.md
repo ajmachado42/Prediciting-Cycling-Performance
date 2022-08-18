@@ -91,7 +91,7 @@ Heart rate and calculated speed were actually very similar between the two perio
 
 ![image info](./images/heart_rate.jpeg)
 
-Speed made sense since I can only go so fast with the type of bike I have and speed is dependent on a lot of other variables.
+Calculated speed made sense since I can only go so fast with the type of bike I have and speed is dependent on a lot of other variables. My average speed tends to stay around the same level activity to activity. Calculated speed was not used in modeling. 
 
 ![image info](./images/speed.jpeg) 
 
@@ -177,7 +177,7 @@ Predicting how a route is going to go can have a lot more variables than just th
 
 Although my models performed really well, and there are always going to be uncertainties, I'd still be curious to see how much more data can go into this model. The target could also be updated to power output by taking trackpoint data from bicycle setups that have a power meter. 
 
-The predictions were reassuring that I'd still be able to do this ride without hitting major intensity zones 4 and 5, often. Taking into account break times and snacks ingested during the ride would also be variables to explore and I don't doubt would increase the level of endurance and performance during a ride. 
+The predictions were reassuring that I'd still be able to do this ride without hitting major intensity zones 4 and 5, often. Taking into account break times/frequency and snacks ingested during the ride, for immediate energy reserves, would also be variables to explore, and I don't doubt would impact the level of endurance and performance during a ride. 
 
 ## Recommendations
 I'd recommend exploring this even further with power output variables and nutritional variables. For cis-gender females, hormone cycles can also have a big impact on performance and perceived exertion. Wind force is something that could also be explored further and how that force affects headwinds as well as tailwinds during a ride.
