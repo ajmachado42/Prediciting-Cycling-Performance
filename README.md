@@ -104,7 +104,7 @@ When comparing distance with heart rate during the two periods. I could see how 
 
 I created a headwind variable using similar calculations used for aircrafts ([source](https://mediawiki.ivao.aero/index.php?title=Crosswind_and_Headwind_calculation)).
 
-While cycling, headwind can feel like a really powerful force, depending on the speed of the wind. This variable needs to be flushed out more to include windforce which would require more data but I added in a simple boolean to account for if a headwind was present. Only 16.33% of trackpoints for both datasets combined experienced headwind but this engineered feature would be used in the final prediction dashboards also. 
+While cycling, headwind can feel like a really powerful force, depending on the force of the wind. This particular variable needs to be flushed out more to include windforce which would require more data but I added in a simple boolean to account for if a headwind was present. Only 16.33% of trackpoints for both datasets combined experienced headwind. This variable wasn't used in the modeling but was used in the predictions dashboards.  
 
 # Modeling
 ---
